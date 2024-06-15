@@ -1,6 +1,6 @@
-# Chatbot with Multiple Agent Responses
+# Mixture of Agents (MoA) Chatbot
 
-This project is a chatbot application built with Python. It uses the `ollama` library to interact with different models, generate responses, and provide a final unified response based on multiple preliminary responses. The application uses `typer` for command-line interface creation and `InquirerPy` for model selection prompts.
+This project implements the concept of a Mixture of Agents (MoA), where several preliminary agents generate basic responses to a given prompt, and one final agent combines these responses to generate the final answer. The project also includes a console chat with the bot, which maintains the dialogue history.
 
 ## Features
 
