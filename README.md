@@ -38,7 +38,7 @@ This project implements the concept of a Mixture of Agents (MoA), where several 
 
 1. **Run the application**:
     ```sh
-    python main.py
+    python MoA_Ollama.py
     ```
 
 2. **Follow the prompts**:
