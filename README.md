@@ -19,8 +19,8 @@ This project implements the concept of a Mixture of Agents (MoA), where several 
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/yourrepository.git
-    cd yourrepository
+    git clone https://github.com/MX-Goliath/MoA-Ollama.git
+    cd MoA-Ollama
     ```
 
 2. **Create and activate a virtual environment**:
