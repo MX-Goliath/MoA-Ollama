@@ -1,6 +1,8 @@
 # Mixture of Agents (MoA) Chatbot
 
 This project implements the concept of a Mixture of Agents (MoA), where several preliminary agents generate basic responses to a given prompt, and one final agent combines these responses to generate the final answer. The project also includes a console chat with the bot, which maintains the dialogue history.
+UPD: Added the ability to input the llm response language. The selected language will be used as part of the hint when generating the response.  
+Added the ability to navigate through the query history using navigation arrows.
 
 ## Features
 
