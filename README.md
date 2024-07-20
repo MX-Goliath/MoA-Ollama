@@ -36,6 +36,12 @@ Added the ability to navigate through the query history using navigation arrows.
     pip install ollama typer InquirerPy
     ```
 
+## Update
+- Since ollama has added support for parallel query execution, preliminary responses are now processed in parallel, which significantly increases the speed of generating the first token of the final response
+
+
+
+
 ## Usage
 
 1. **Run the application**:
