@@ -3,6 +3,8 @@ import ollama
 import typer
 from typing import List, Dict, Any
 from InquirerPy import inquirer
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
 
 app = typer.Typer()
 
@@ -75,10 +77,18 @@ def main():
         chat_history.append({'role': 'user', 'content': prompt})
 
         responses = []
-        for _ in range(3):
-            response = agent(prompt, selected_model, chat_history, language)
-            responses.append(response)
-        
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            futures = [executor.submit(agent, prompt, selected_model, chat_history, language) for _ in range(3)]
+            for future in as_completed(futures):
+                try:
+                    responses.append(future.result())
+                except Exception as e:
+                    typer.secho(f"Error in agent response: {e}", fg=typer.colors.RED)
+
+        if len(responses) < 3:
+            typer.secho("Not enough responses generated. Try again.", fg=typer.colors.RED)
+            continue
+
         final_response = final_agent(prompt, responses, selected_model, chat_history, language)
         chat_history.append({'role': 'assistant', 'content': final_response})
 
